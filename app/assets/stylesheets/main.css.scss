@@ -1,26 +1,14 @@
+@import "compass/css3";
+@import "icon/*.png";
+@include all-icon-sprites;
+
 body {
-  font-family: 'Plumb', Arial;
-  color: #111;
+  font: 14px 'Plumb', Arial;
+  color: #fff;
+  min-height: 700px;
 }
 a {
   text-decoration: none;
-}
-.window{
-  width:100%;
-  height:100%;
-  position: absolute;
-  background-size: cover;
-}
-@for $i from 1 through 6{
-  .window-#{$i} {
-    top: $i * 100%;
-  }
-}
-
-@each $item in btl, posm, digital {
-  ##{$item} {
-    background-image: image-url('/assets/windows/#{$item}.jpg');
-  }
 }
 
 // nav
@@ -44,14 +32,10 @@ a {
   }
   ul {
     width: 65%;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     text-transform: uppercase;
     border-top: 4px solid #111;
 
     li {
-      float: left;
       font-size: 18px;
       font-weight: bold;
 
@@ -84,4 +68,147 @@ a {
   right: 5%;
   bottom: 3%;
   z-index: 1000;
+}
+
+// content
+.window{
+  width:100%;
+  height:100%;
+  background-size: cover;
+  min-height: 820px;
+
+  h1 {
+    font-size: 90px;
+    margin: 0 0 15px;
+  }
+  h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+  }
+}
+.window-0 {
+  min-height: 0;
+}
+.window-wrap {
+  width: 980px;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+.window-text {
+  width: 475px;
+}
+
+@each $item in btl, posm, digital {
+  ##{$item} {
+    background-image: image-url('/assets/windows/#{$item}.jpg');
+  }
+}
+
+@each $item in btl-promo, btl-web, btl-holiday, btl-balloon {
+  .icon-#{$item} {
+    display: inline-block;
+    width: icon-sprite-width(#{$item});
+    height: icon-sprite-height(#{$item});
+    @include icon-sprite(#{$item}); 
+  }
+}
+
+// BTL
+#btl {
+  .btl-list {
+    font-size: 18px;
+
+    li {
+      float: none;
+      padding-left: 60px;
+      padding-top: 20px;
+      line-height: 41px;
+      position: relative;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+    .btl-list-icon {
+      display: inline-block;
+      width: 43px;
+      height: 41px;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -10px;
+
+      .icon-btl-promo {
+        position: relative;
+        top: -4px;
+      }
+    }
+  }
+}
+
+// POSM
+.show-works {
+  font-weight: bold;
+  font-size: 22px;
+  padding-left: 150px;
+  padding-top: 26px;
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+// Digital
+.digital-quote {
+  font: 30px 'PlumbMedium', Arial;
+  position: relative;
+  padding: 0 20px 0 75px;
+  width: 315px;
+  margin-top: 80px;
+
+  &:before, &:after {
+    display: block;
+    position: absolute;
+    font: 92px 'PlumbMedium', Arial;
+  }
+  &:before {
+    content: '«';
+    top: -26px;
+    left: 0;
+  }
+  &:after {
+    content: '»';
+    bottom: -26px;
+    right: 0;
+  }
+}
+
+// Clients
+ul.clients-list {
+  width: 100%;
+  margin-top: 60px;
+
+  li {
+    width: 25%;
+    height: 180px;
+    text-align: center;
+
+    &.text-left {
+      text-align: left;
+      width: 20%;
+    }
+    &.client-large {
+      width: 30%;
+    }
+    .client-sony {
+      padding-left: 36px;
+    }
+    .client-ntv {
+      padding-left: 17px;
+    }
+  }
 }
