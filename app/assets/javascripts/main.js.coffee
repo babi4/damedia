@@ -37,8 +37,11 @@ initialize = ->
 google.maps.event.addDomListener(window, 'load', initialize);
 
 $ ->
-  $('#menu ul').onePageNav
-    changeHash: true
+  $('#menu').onePageNav()
 
   $('#slides').superslides
     play: 6000
+
+  $('#nav-arrow').on 'click', ->
+    link = $('#menu').find('.current').next().find('a').attr('href')
+    $.scrollTo($(link), 750)
