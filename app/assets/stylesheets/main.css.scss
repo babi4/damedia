@@ -183,14 +183,14 @@ a {
 
 // Digital
 #digital {
-  min-height: 680px;
+  min-height: 690px;
 }
 .digital-quote {
   font: 30px 'PlumbMedium', Arial;
   position: relative;
   padding: 0 20px 0 75px;
   width: 315px;
-  margin-top: 80px;
+  margin-top: 60px;
 
   &:before, &:after {
     display: block;
@@ -206,6 +206,11 @@ a {
     content: '»';
     bottom: -26px;
     right: 0;
+  }
+  &:hover {
+    &:after, &:before {
+      color: #d71921;
+    }
   }
 }
 
@@ -290,7 +295,7 @@ ul.clients-list {
   font-family: 'Plumb', Arial;
   font-weight: bold;
 }
-.contacts-form {
+#contacts-form {
   font: 14px 'Plumb', Arial;
 
   h3 {
@@ -302,18 +307,23 @@ ul.clients-list {
     margin: 0 0 20px;
   }
   input, textarea {
-    width: 300px;
+    width: 298px;
     border: 0;
     background: #e7e7e7;
+    border: 1px solid #e7e7e7;
     margin-bottom: 10px;
-    padding: 6px 10px;
+    padding: 5px 9px;
+
+    &.error {
+      border: 1px solid #d71921;
+    }
   }
   textarea {
     resize: none;
     height: 60px;
   }
 }
-.contacts-submit {
+#contacts-submit {
   text-decoration: none;
   background: #d71921;
   font-weight: bold;
@@ -321,6 +331,8 @@ ul.clients-list {
   padding: 9px;
   text-transform: uppercase;
   margin-top: 10px;
+  border: 0;
+  display: inline-block;
 
   &:hover {
     color: #fff;

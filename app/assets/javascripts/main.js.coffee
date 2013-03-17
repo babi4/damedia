@@ -4,6 +4,7 @@ initialize = ->
     center: new google.maps.LatLng(55.7521, 37.6934)
     mapTypeId: google.maps.MapTypeId.ROADMAP
     scrollwheel: false
+    disableDefaultUI: true
     styles: [
       stylers: [
         saturation: -100
@@ -45,3 +46,18 @@ $ ->
   $('#nav-arrow').on 'click', ->
     link = $('#menu').find('.current').next().find('a').attr('href')
     $.scrollTo($(link), 750)
+
+  $contactForm = $('#contacts-form')
+  $contactInputs = $contactForm.find('input, textarea')
+  $('#contacts-submit').on 'click', ->
+    errors = $contactInputs.filter(->
+      $(@).val().trim() is ""
+    ).addClass('error')
+    unless errors.length
+      #$contactForm.submit() 
+      $contactInputs.val ''
+      alert 'Сообщение отправлено.'
+    false
+
+  $contactForm.on 'blur', '.error', ->
+    $(@).removeClass('error') unless $(@).val().trim() is ""
