@@ -5,6 +5,9 @@ initialize = ->
     mapTypeId: google.maps.MapTypeId.ROADMAP
     scrollwheel: false
     disableDefaultUI: true
+    zoomControl: true
+    zoomControlOptions:
+      position: google.maps.ControlPosition.LEFT_CENTER
     styles: [
       stylers: [
         saturation: -100
@@ -40,8 +43,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $ ->
   $('#menu').onePageNav()
 
-  $('#slides').superslides
-    play: 6000
+  $slides = $('#slides')
+  $slides.superslides()
+
+  slidesHammer = $slides.hammer()
+  slidesHammer.on 'swipeleft', (ev) ->
+    $slides.superslides('animate', 'prev')
+  slidesHammer.on 'swiperight', (ev) ->
+    $slides.superslides('animate', 'prev')
 
   $('#nav-arrow').on 'click', ->
     link = $('#menu').find('.current').next().find('a').attr('href')
