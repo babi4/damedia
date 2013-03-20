@@ -43,14 +43,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
 $ ->
   $('#menu').onePageNav()
 
-  $slides = $('#slides')
-  $slides.superslides()
+  bullets = document.getElementById('position').getElementsByTagName('li')
 
-  slidesHammer = $slides.hammer()
-  slidesHammer.on 'swipeleft', (ev) ->
-    $slides.superslides('animate', 'prev')
-  slidesHammer.on 'swiperight', (ev) ->
-    $slides.superslides('animate', 'prev')
+  slider = Swipe(document.getElementById("slides"),
+    callback: (pos) ->
+      i = bullets.length
+      bullets[i].className = " "  while i--
+      bullets[pos].className = "on"
+  )
+  
+  $('#position').on 'click', 'li', ->
+    slider.slide $(@).index(), 400
 
   $('#nav-arrow').on 'click', ->
     link = $('#menu').find('.current').next().find('a').attr('href')
