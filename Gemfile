@@ -26,6 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'newrelic_rpm'
 gem "slim", "~> 1.3.6"
 gem "jquery-rails", "~> 2.2.1"
 
