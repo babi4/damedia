@@ -55,7 +55,8 @@ module Damedia
 
     # Enable the asset pipeline
     config.assets.enabled = true
-
+    config.assets.initialize_on_precompile = false
+    
     config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
 
     # Version of your assets, change this if you want to expire all your assets
