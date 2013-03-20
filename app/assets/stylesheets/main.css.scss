@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-@import "compass/css3";
 @import "icon/*.png";
-@include all-icon-sprites;
+@import "clients/*.png";
 
 html, body {
   width: 100%;
@@ -315,6 +314,9 @@ ul.clients-list {
     height: 180px;
     text-align: center;
 
+    a {
+      display: inline-block;
+    }
     &.text-left {
       text-align: left;
       width: 20%;
@@ -323,13 +325,21 @@ ul.clients-list {
       width: 30%;
     }
     .client-sony {
-      padding-left: 36px;
+      margin-left: 36px;
     }
     .client-ntv {
-      padding-left: 17px;
+      margin-left: 17px;
     }
   }
 }
+@each $client in perec, pozhar, brunch, domashniy, sony, dixy, sts, zoo, ntv, extes, child-tv, first-bank, anson-road {
+  ##{$client} {
+    width: clients-sprite-width(#{$client});
+    height: clients-sprite-height(#{$client});
+    @include clients-sprite(#{$client}); 
+  }
+}
+
 
 // Contacts
 #map {
