@@ -22,11 +22,8 @@ window.initialize = ->
     icon: '/assets/custom-marker.png'
 
   roadCoordinates = [
-    new google.maps.LatLng(55.74683, 37.68059), 
-    new google.maps.LatLng(55.74714, 37.67617), 
-    new google.maps.LatLng(55.74807, 37.67632),
-    new google.maps.LatLng(55.74829, 37.67527),
-    new google.maps.LatLng(55.74983, 37.67641),
+    new google.maps.LatLng(55.74691, 37.68017), 
+    new google.maps.LatLng(55.74855, 37.68200),
     new google.maps.LatLng(55.75046, 37.67313),
     new google.maps.LatLng(55.75104, 37.67358),
     new google.maps.LatLng(55.75126, 37.67300),
