@@ -16,7 +16,7 @@ initialize = ->
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions)
 
-  beachMarker = new google.maps.Marker
+  damediaMarker = new google.maps.Marker
     position: new google.maps.LatLng(55.75135, 37.67463)
     map: map
     icon: '/assets/custom-marker.png'
@@ -26,8 +26,12 @@ initialize = ->
     new google.maps.LatLng(55.74714, 37.67617), 
     new google.maps.LatLng(55.74807, 37.67632),
     new google.maps.LatLng(55.74829, 37.67527),
-    new google.maps.LatLng(55.75156, 37.67774),
-    new google.maps.LatLng(55.75145, 37.67473),
+    new google.maps.LatLng(55.74983, 37.67641),
+    new google.maps.LatLng(55.75046, 37.67313),
+    new google.maps.LatLng(55.75104, 37.67358),
+    new google.maps.LatLng(55.75126, 37.67300),
+    new google.maps.LatLng(55.75162, 37.67343),
+    new google.maps.LatLng(55.75140, 37.67453)
   ]
 
   roadPath = new google.maps.Polyline(
