@@ -80,9 +80,8 @@ $ ->
       $(@).val().trim() is ""
     ).addClass('error')
     unless errors.length
-      #$contactForm.submit() 
       $contactInputs.val ''
-      alert 'Сообщение отправлено.'
+      $('#contacts-inputs, #contacts-success').addClass 'sent'
     false
 
   $contactForm.on 'blur', '.error', ->

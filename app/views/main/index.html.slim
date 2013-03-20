@@ -163,12 +163,17 @@ section.window.window-5#contacts
           span.contacts-icon
             i.icon-download
           a href="#" Скачать презентацию
-      form.pull-left.contacts-block#contacts-form
+      .pull-left.contacts-block#contacts-form
         h3 
           span.contacts-icon
             i.icon-letter
           | Напишите нам
-        input type="text" placeholder="Ваше имя"
-        input type="email" placeholder="Ваш e-mail"
-        textarea.contacts-textarea placeholder="Текст сообщения"
-        a.pull-right#contacts-submit href="#" Отправить
+        h4#contacts-success
+          | Мы не оставим ваше
+          br
+          | сообщение без ответа.
+        #contacts-inputs
+          input type="text" placeholder="Ваше имя"
+          input type="email" placeholder="Ваш e-mail"
+          textarea.contacts-textarea placeholder="Текст сообщения"
+          a.pull-right#contacts-submit href="#" Отправить
