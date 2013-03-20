@@ -1,4 +1,4 @@
-initialize = ->
+window.initialize = ->
   mapOptions = 
     zoom: 15
     center: new google.maps.LatLng(55.7521, 37.6934)
@@ -42,7 +42,13 @@ initialize = ->
   )
   roadPath.setMap map
 
-google.maps.event.addDomListener(window, 'load', initialize);
+loadScript = ->
+  script = document.createElement("script")
+  script.type = "text/javascript"
+  script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&" + "callback=initialize"
+  document.body.appendChild script
+
+window.onload = loadScript
 
 $ ->
   $('#menu').onePageNav()
