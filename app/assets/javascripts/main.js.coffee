@@ -51,12 +51,16 @@ $ ->
       bullets[i].className = " "  while i--
       bullets[pos].className = "on"
   )
-  
+
   $('#position').on 'click', 'li', ->
     slider.slide $(@).index(), 400
 
   $('#nav-arrow').on 'click', ->
-    link = $('#menu').find('.current').next().find('a').attr('href')
+    $nextWindow = $('#menu').find('.current').next()
+    unless $nextWindow.length
+      $nextWindow = $('#menu').find('li').first()
+
+    link = $nextWindow.find('a').attr('href')
     $.scrollTo($(link), 750)
 
   $contactForm = $('#contacts-form')
