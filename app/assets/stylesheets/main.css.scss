@@ -32,9 +32,20 @@ a {
   z-index: 1000;
   background: #fff;
 
+  :-moz-any-link:focus {
+    outline: none;
+  }
+
+  .progress {
+    background: #d71921;
+    height: 4px;
+    position: absolute;
+    width: 35%;
+  }
+
   .menu-l {
     width: 35%;
-    border-top: 4px solid #d71921;
+    border-top: 4px solid #111;
 
     img {
       vertical-align: middle;

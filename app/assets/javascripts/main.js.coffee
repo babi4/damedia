@@ -1,5 +1,5 @@
 window.initialize = ->
-  mapOptions = 
+  mapOptions =
     zoom: 15
     center: new google.maps.LatLng(55.7521, 37.6934)
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -16,13 +16,13 @@ window.initialize = ->
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions)
 
-  damediaMarker = new google.maps.Marker
+  new google.maps.Marker
     position: new google.maps.LatLng(55.75135, 37.67463)
     map: map
     icon: '/assets/custom-marker.png'
 
   roadCoordinates = [
-    new google.maps.LatLng(55.74691, 37.68017), 
+    new google.maps.LatLng(55.74691, 37.68017),
     new google.maps.LatLng(55.74855, 37.68200),
     new google.maps.LatLng(55.75046, 37.67313),
     new google.maps.LatLng(55.75104, 37.67358),
@@ -48,7 +48,18 @@ loadScript = ->
 window.onload = loadScript
 
 $ ->
-  $('#menu').onePageNav()
+  setProgressWidth = ($currentListItem) ->
+    padding = $currentListItem.offset().left + $currentListItem.width()
+    $('#progress').stop().animate(
+      { width: padding },
+      queue: false
+      duration: 300
+    )
+
+  $('#menu').onePageNav(scrollChange: setProgressWidth)
+    .on('click', 'a', ->
+      setProgressWidth($(@).parent())
+    )
 
   bullets = document.getElementById('position').getElementsByTagName('li')
 
