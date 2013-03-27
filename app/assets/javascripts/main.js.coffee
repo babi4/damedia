@@ -48,7 +48,13 @@ loadScript = ->
 window.onload = loadScript
 
 $ ->
-  $('#menu').onePageNav()
+  $('#menu').onePageNav
+    changeHash: true
+    scrollSpeed: 400
+    scrollChange: ($currentListItem) ->
+      oldScroll = $('body').scrollTop()
+      window.location.hash = $currentListItem.find('a').attr('href')
+      $('html,body').scrollTop(oldScroll)
 
   bullets = document.getElementById('position').getElementsByTagName('li')
 

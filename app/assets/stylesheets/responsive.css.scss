@@ -2,4 +2,26 @@
   .phone {
     display: none;
   }
+  #slide-3 {
+    h1 {
+      left: 5%;
+    }
+  }
+}
+@media (min-width: 1600px) {
+  #slide-1 {
+    h1 {
+      left: 70%;
+    }
+  }
+  #slide-2, #slide-3 {
+    h1 {
+      left: 10%;
+    }
+  }
+  #slide-4 {
+    h1 {
+      left: 60%;
+    }
+  }
 }
