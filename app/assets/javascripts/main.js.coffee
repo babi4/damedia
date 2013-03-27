@@ -1,7 +1,7 @@
 window.initialize = ->
   mapOptions = 
     zoom: 15
-    center: new google.maps.LatLng(55.7521, 37.6934)
+    center: new google.maps.LatLng(55.7511, 37.6934)
     mapTypeId: google.maps.MapTypeId.ROADMAP
     scrollwheel: false
     disableDefaultUI: true
@@ -39,11 +39,10 @@ window.initialize = ->
   )
   roadPath.setMap map
 
-  google.maps.event.addDomListener map, "idle", ->
-    window.mapCenter = map.getCenter()
-
+  # center map to fix marker position
   google.maps.event.addDomListener window, "resize", ->
-    map.setCenter window.mapCenter  
+    lat = if $(window).height() > 850 then 55.7485 else 55.7511
+    map.setCenter(new google.maps.LatLng(lat, 37.6934))
 
 loadScript = ->
   script = document.createElement("script")
