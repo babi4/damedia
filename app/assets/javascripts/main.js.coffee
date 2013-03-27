@@ -39,6 +39,12 @@ window.initialize = ->
   )
   roadPath.setMap map
 
+  google.maps.event.addDomListener map, "idle", ->
+    window.mapCenter = map.getCenter()
+
+  google.maps.event.addDomListener window, "resize", ->
+    map.setCenter window.mapCenter  
+
 loadScript = ->
   script = document.createElement("script")
   script.type = "text/javascript"
