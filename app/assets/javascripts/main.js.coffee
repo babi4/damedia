@@ -20,7 +20,6 @@ $ ->
   $(window).on('resize', lazyScroll)
 
   bullets = document.getElementById('position').getElementsByTagName('li')
-
   slider = Swipe(document.getElementById("slides"),
     auto: 5000
     callback: (pos) ->
