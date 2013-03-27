@@ -371,11 +371,20 @@ ul.clients-list {
 
   img {
     position: absolute;
-    top: 48%;
-    margin-top: -468px;
-    margin-left: -952px;
+    top: 50%;
     left: 50%;
+
+    &.small {
+      margin-top: -483px;
+      margin-left: -952px;
+    }
+    &.large {
+      margin-top: -688px;
+      margin-left: -1280px;
+    }
+
   }
+
 }
 
 
