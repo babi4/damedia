@@ -12,7 +12,7 @@ window.buildNav = ->
   $wrapper = $('#menu')
 
   $menu = $wrapper.children('ul')
-  $items = $menu.children('li').children('a')
+  $items = $wrapper.find('a')
   $blocks = getBlocks()
 
   setProgressWidth = ($currentListItem) ->
@@ -23,12 +23,16 @@ window.buildNav = ->
       duration: SCROLL_DURATION / 2
     )
 
+  setHash = (hash) ->
+    history.pushState(null, null, hash)
+
   setCurrent = ($target) ->
     if $target
       unless $target.parent().hasClass('current')
         $items.parent('.current').removeClass('current')
         $target.parent().addClass('current') if $target
         setProgressWidth($target.parent())
+        setHash $target.attr('href')
     else
       $items.parent('.current').removeClass('current')
 
@@ -52,13 +56,11 @@ window.buildNav = ->
     $.scrollTo(newLoc, SCROLL_DURATION,
                axis: 'y'
                easing: 'swing'
-               offset: {top: -OFFSET}
     )
 
   $items.on 'click', (e) ->
     e.preventDefault()
-    newLoc = $(@getAttribute('href')).offset().top
-    scrollTo(newLoc)
+    scrollTo $(@getAttribute('href'))
 
   $(document).on('keydown', (e) ->
     if e.keyCode is 38
