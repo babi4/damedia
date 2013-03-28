@@ -19,6 +19,9 @@ $ ->
       false
   )
 
+  $('.slide').on 'click', ->
+    slider.next()
+
   $('#position').on 'click', 'li', ->
     slider.slide $(@).index(), 400
 
