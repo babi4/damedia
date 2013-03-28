@@ -4,7 +4,7 @@ $ ->
 
   lazyScroll = _.debounce( ->
     currentListItem = $('#menu').find('.current').find('a').attr('href')
-    $('body').scrollTo $(currentListItem), 400
+    $.scrollTo $(currentListItem), 400, {axis: 'y'}
   , 300)
 
   $(window).on('resize', lazyScroll)
@@ -28,7 +28,7 @@ $ ->
       $nextWindow = $('#menu').find('li').first()
 
     link = $nextWindow.find('a').attr('href')
-    $.scrollTo($(link), 750)
+    $.scrollTo $(link), 750, {axis: 'y'}
 
   $contactForm = $('#contacts-form')
   $contactInputs = $contactForm.find('input, textarea')

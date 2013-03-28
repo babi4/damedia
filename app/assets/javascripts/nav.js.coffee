@@ -5,7 +5,8 @@ window.buildNav = ->
   getBlocks = ->
     ids = []
     $items.each ->
-      ids.push @getAttribute('href')
+      href = @getAttribute('href')
+      ids.push @getAttribute('href') if href[0] is '#'
 
     $(ids.join(', '))
 
