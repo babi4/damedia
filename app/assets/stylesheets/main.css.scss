@@ -186,9 +186,14 @@ a {
     font-size: 90px;
     margin: 0 0 15px;
   }
+  .window-title {
+    font-family: 'PlumbBlack';
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
   h2 {
     font-size: 30px;
-    margin: 0 0 10px;
+    margin: 0 0 18px;
   }
 }
 .window-0 {
@@ -197,7 +202,7 @@ a {
 .window-wrap {
   width: 980px;
   margin: 0 auto;
-  padding-top: 70px;
+  padding-top: 90px;
 }
 .window-text {
   width: 475px;
@@ -224,7 +229,7 @@ a {
 
 // BTL
 #btl {
-  min-height: 820px;
+  min-height: 855px;
 
   .btl-list {
     font-size: 18px;
@@ -260,7 +265,7 @@ a {
 
 // POSM
 #posm {
-  min-height: 790px;
+  min-height: 825px;
 }
 .show-works {
   font-weight: bold;
@@ -278,7 +283,8 @@ a {
 
 // Digital
 #digital {
-  min-height: 690px;
+  min-height: 725px;
+  background-position: center right;
 }
 .digital-quote {
   font: 30px 'PlumbMedium', Arial;
@@ -312,7 +318,7 @@ a {
 // Clients
 #clients {
   overflow: hidden;
-  min-height: 860px;
+  min-height: 895px;
 }
 ul.clients-list {
   width: 100%;
@@ -354,7 +360,7 @@ ul.clients-list {
 #map {
   width: 100%;
   height: 100%;
-  min-height: 760px;
+  min-height: 795px;
   position: absolute;
   z-index: 10;
   top: 0;
