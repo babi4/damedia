@@ -53,6 +53,7 @@ loadScript = ->
 window.onload = loadScript
 
 $ ->
+
   $('#menu').onePageNav
     changeHash: true
     scrollSpeed: 400
@@ -60,6 +61,13 @@ $ ->
       oldScroll = $('body').scrollTop()
       window.location.hash = $currentListItem.find('a').attr('href')
       $('html,body').scrollTop(oldScroll)
+
+  lazyScroll = _.debounce( ->
+    currentListItem = $('#menu').find('.current').find('a').attr('href')
+    $('body').scrollTo $(currentListItem), 400
+  , 300)
+
+  $(window).on('resize', lazyScroll)
 
   bullets = document.getElementById('position').getElementsByTagName('li')
 
