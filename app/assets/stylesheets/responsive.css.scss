@@ -25,3 +25,34 @@
     }
   }
 }
+
+@media (min-height: 900px) {
+  #posm, #digital {
+    .window-wrap {
+      padding-top: 160px;
+    }
+  }
+  #contacts {
+    .contacts-wrap {
+      margin-top: 50px;
+    }
+  }
+}
+
+@media (min-height: 1000px) {
+  #btl, #clients {
+    .window-wrap {
+      padding-top: 160px;
+    }
+  }
+  #posm, #digital {
+    .window-wrap {
+      padding-top: 210px;
+    }
+  }
+  #contacts {
+    .contacts-wrap {
+      margin-top: 100px;
+    }
+  }
+}
