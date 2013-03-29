@@ -33,6 +33,15 @@ $ ->
     link = $nextWindow.find('a').attr('href')
     $.scrollTo $(link), 750, {axis: 'y'}
 
+  $('#open-works').on 'click', (e) ->
+    e.preventDefault()
+    $.fancybox $('.fancybox'),
+      padding: 0
+      helpers:
+        thumbs:
+          width: 50
+          height: 50
+
   $contactForm = $('#contacts-form')
   $contactInputs = $contactForm.find('input, textarea')
   $('#contacts-submit').on 'click', ->

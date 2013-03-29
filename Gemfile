@@ -30,6 +30,7 @@ end
 gem 'newrelic_rpm'
 gem "slim", "~> 1.3.6"
 gem "jquery-rails", "~> 2.2.1"
+gem "lodash-rails", "~> 1.1.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
