@@ -11,7 +11,7 @@ $ ->
 
   bullets = document.getElementById('position').getElementsByTagName('li')
   slider = Swipe(document.getElementById("slides"),
-    auto: 10000
+    auto: 5000
     callback: (pos) ->
       i = bullets.length
       bullets[i].className = " "  while i--
