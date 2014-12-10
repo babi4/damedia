@@ -302,12 +302,22 @@ a {
 #digital {
   min-height: 725px;
   background-position: center right;
+
+  .window-text {
+    width: 500px;
+  }
+  p {
+    width: 475px;
+
+    &.digital-quote {
+      width: 315px;
+    }
+  }
 }
 .digital-quote {
   font: 30px 'PlumbMedium', Arial;
   position: relative;
   padding: 0 20px 0 75px;
-  width: 315px;
   margin-top: 60px;
 
   &:before, &:after {
