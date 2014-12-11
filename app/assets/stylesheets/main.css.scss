@@ -106,7 +106,7 @@ a {
   position: relative;
   height: 100%;
   width: 100%;
-  
+
   & > div {
     float: left;
     width: 100%;
@@ -234,7 +234,7 @@ a {
     display: inline-block;
     width: icon-sprite-width(#{$item});
     height: icon-sprite-height(#{$item});
-    @include icon-sprite(#{$item}); 
+    @include icon-sprite(#{$item});
   }
 }
 
@@ -345,7 +345,7 @@ a {
 // Clients
 #clients {
   overflow: hidden;
-  min-height: 895px;
+  min-height: 1195px;
 }
 ul.clients-list {
   width: 100%;
@@ -354,6 +354,7 @@ ul.clients-list {
   li {
     width: 25%;
     height: 180px;
+    line-height: 180px;
     text-align: center;
 
     a {
@@ -378,7 +379,7 @@ ul.clients-list {
   ##{$client} {
     width: clients-sprite-width(#{$client});
     height: clients-sprite-height(#{$client});
-    @include clients-sprite(#{$client}); 
+    @include clients-sprite(#{$client});
   }
 }
 
