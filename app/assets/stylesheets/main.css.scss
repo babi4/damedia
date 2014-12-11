@@ -374,7 +374,7 @@ ul.clients-list {
     }
   }
 }
-@each $client in perec, pozhar, brunch, domashniy, sony, dixy, sts, zoo, ntv, extes, child-tv, first-bank, anson-road {
+@each $client in perec, pozhar, brunch, domashniy, sony, dixy, sts, zoo, ntv, extes, child-tv, first-bank, anson-road, alfa, art_pictures, ctc_love, mebe, metro, mst, red, sedmoj_kontinent, thr {
   ##{$client} {
     width: clients-sprite-width(#{$client});
     height: clients-sprite-height(#{$client});
